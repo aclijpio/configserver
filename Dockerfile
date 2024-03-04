@@ -1,6 +1,6 @@
 FROM openjdk:17-alpine as build
 LABEL maintainer="aclij"
-ARG JAR_FILE=/target/configserver-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE
 COPY ${JAR_FILE} app.jar
 RUN mkdir -p target/dependency && (cd target/dependency; jar -xf /app.jar)
 
